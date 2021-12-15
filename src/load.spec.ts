@@ -8,8 +8,6 @@ describe('.load', () => {
     expect($('body')).toHaveLength(1);
   });
   
-  
-
   it('(html) : should handle lowercase tag options', () => {
     const $ = cheerio.load('<BODY><ul id="fruits"></ul></BODY>', {
       xml: { lowerCaseTags: true },
@@ -19,7 +17,7 @@ describe('.load', () => {
 
   it('(html) : should handle the `normalizeWhitepace` option', () => {
     const $ = cheerio.load('<body><b>foo</b>  <b>bar</b></body>', {
-      xml: { normalizeWhitespace: false },
+      xml: { normalizeWhitespace: true },
     });
     expect($.html()).toBe('<body><b>foo</b> <b>bar</b></body>');
   });
