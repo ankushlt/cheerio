@@ -12,8 +12,9 @@ import type { Node, Document, Element } from 'domhandler';
 import type * as Load from './load';
 import { SelectorType, BasicAcceptedElems } from './types';
 
-type StaticType = typeof staticMethods;
 type LoadType = typeof Load;
+type StaticType = typeof staticMethods;
+
 
 /**
  * A querying function, bound to a document created from the provided markup.
