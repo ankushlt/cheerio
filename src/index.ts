@@ -30,6 +30,9 @@ import { load } from './load';
  *
  * @deprecated Use the function returned by `load` instead.
  */
+
+
+
 export default load([]);
 
 import * as staticMethods from './static';
