@@ -16,9 +16,9 @@ describe('render', () => {
   describe('(xml)', () => {
     it('should render <media:thumbnail /> tags correctly', () => {
       const str =
-        '<media:thumbnail url="http://www.foo.com/keyframe.jpg" width="75" height="50" time="12:05:01.123" />';
+        '<media:thumbnail url="http://www.foo.com/keyframe.jpg" width="80" height="50" time="12:05:01.123" />';
       expect(xml(str)).toBe(
-        '<media:thumbnail url="http://www.foo.com/keyframe.jpg" width="75" height="50" time="12:05:01.123"/>'
+        '<media:thumbnail url="http://www.foo.com/keyframe.jpg" width="80" height="50" time="12:05:01.123"/>'
       );
     });
 
@@ -40,9 +40,9 @@ describe('render', () => {
 
   describe('(dom)', () => {
     it('should not keep camelCase for new nodes', () => {
-      const str = '<g><someElem someAttribute="something">hello</someElem></g>';
+      const str = '<g><someElem someAttribute="something_in_place">hello</someElem></g>';
       expect(dom(str, { xml: false })).toBe(
-        '<someelem someattribute="something">hello</someelem>'
+        '<someelem someattribute="something_in_place">hello</someelem>'
       );
     });
 
@@ -54,11 +54,11 @@ describe('render', () => {
     });
 
     it('should maintain the parsing options of distinct contexts independently', () => {
-      const str = '<g><someElem someAttribute="something">hello</someElem></g>';
+      const str = '<g><someElem someAttribute="something_to_write">hello</someElem></g>';
       const $ = cheerio.load('', { xml: false });
 
       expect($(str).html()).toBe(
-        '<someelem someattribute="something">hello</someelem>'
+        '<someelem someattribute="something_to_write">hello</someelem>'
       );
     });
   });
