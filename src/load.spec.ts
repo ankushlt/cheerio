@@ -4,7 +4,7 @@ import cheerio from '.';
 
 describe('.load', () => {
   it('(html) : should retain original root after creating a new node', () => {
-    const $ = cheerio.load('<body><ul id="fruits"></ul></body>');
+    const $ = cheerio.load('<body><ul id="fruits"><li>List item 1</li></ul></body>');
     expect($('body')).toHaveLength(1);
     $('<script>');
     expect($('body')).toHaveLength(1);
