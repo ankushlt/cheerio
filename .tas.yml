@@ -1,18 +1,55 @@
 ---
-framework: jest
+# supported frameworks: mocha|jest|jasmine
+framework: mocha
+
 blocklist:
-  - "src/api/traversing.spec.ts##$(...)##.add()##(element) honors document order when element occurs :##within the current selection"
+  # format: "<filename>##<suit-name>##<suit-name>##<test-name>"
+  - "src/test/api.js"
+  - "src/test/api1.js##this is a test-suite"
+  - "src/test/api2.js##this is a test-suite##this is a test-case"
+
+preRun:
+  # set of commands to run before running the tests like \`yarn install\`, \`yarn build\`
+  command:
+    - npm ci
+    - docker build --build-arg NPM_TOKEN=$\{\{ secrets.NPM_TOKEN \}\} --tag=nucleus
+
 postMerge:
+  # env vars provided at the time of discovering and executing the post-merge tests
+  env:
+    REPONAME: nexe
+    AWS_KEY: $\{\{ secrets.AWS_KEY \}\}
+  # glob-pattern for identifying the test files
   pattern:
-    - './src/**/*.spec.ts'
+    - "./test/**/*.spec.ts"
+  # strategy for trigerring builds for post-merge
   strategy:
-    threshold: <5|100s|30m|6h>
-    type: <commit|time>
+    threshold: 1
+    name: after_n_commits
+
 preMerge:
   pattern:
-    - './src/**/*.spec.ts'
-preRun:
-  - npm ci
+    - "./test/**/*.spec.ts"
+
 postRun:
-  - node --version
+  # set of commands to run after running the tests
+  command:
+    - node --version
+
+# path to your custom configuration file required by framework
+configFile: mocharc.yml
+
+# provide the semantic version of nodejs required for your project
+nodeVersion: 14.17.2
+
+# configure whether to smartSelect test-cases. Default true
+smartRun: false
+
+# supported tiers: xmall|small|medium|large|xlarge
+tier: xsmall
+
+# number of containers in which the tests must be splitted into for execution
+parallelism: 2
+
+# version of tas file intended to be used in order to issue warnings for deprecation or breaking changes
 version: 2.0
