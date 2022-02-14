@@ -1,7 +1,6 @@
 import type { Document, Element } from 'domhandler';
 import parse from './parse';
 import defaultOpts from './options';
-// Test Anmol comments
 // Tags
 const basic = '<html></html>';
 const siblings = '<h2></h2><p></p>';
