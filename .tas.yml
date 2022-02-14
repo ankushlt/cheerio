@@ -18,3 +18,13 @@ parallelism: 2
 
 # version of tas file intended to be used in order to issue warnings for deprecation or breaking changes
 version: 2.0
+
+
+postMerge:
+  # env vars provided at the time of discovering and executing the post-merge tests
+  env:
+    REPONAME: cheerio
+  pattern:
+    # regex pattern to discover tests to run in case of postMerge
+    - "**/*.spec.ts"
+
