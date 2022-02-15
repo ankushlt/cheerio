@@ -3,7 +3,7 @@ import type { Cheerio } from '../cheerio';
 import type { Element } from 'domhandler';
 import { mixedText } from '../__fixtures__/fixtures';
 
-describe('$(..)', () => {
+describe('$(...)', () => {
   describe('.css', () => {
     it('(prop): should return a css property value', () => {
       const el = cheerio('<li style="hai: there">');
