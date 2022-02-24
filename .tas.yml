@@ -10,10 +10,8 @@ preRun:
   command:
     # change the command according to the package manager used.
     # For eg, npm ci, yarn install
-    # - npm install
-    framework: jest
+    - npm install
 
-     
 postMerge:
   # glob-pattern for identifying the test files
   pattern:
