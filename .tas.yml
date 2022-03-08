@@ -18,3 +18,5 @@ postMerge:
     # glob-patterns to discover tests to run in case of postMerge
     - "./src/**/*.spec.ts"
     # - "./unit_test_folder_B/**/*.ts"
+
+
