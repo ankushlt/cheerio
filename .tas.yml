@@ -11,3 +11,10 @@ preRun:
     # change the command according to the package manager used.
     # For eg, npm ci, yarn install
     - npm ci
+
+postMerge:
+  # glob-pattern for identifying the test files
+  pattern:
+    # glob-patterns to discover tests to run in case of postMerge
+    - "./src/**/*.spec.ts"
+    # - "./unit_test_folder_B/**/*.ts"
