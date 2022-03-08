@@ -3,6 +3,7 @@ import cheerio from '.';
 import * as utils from './utils';
 import { fruits, food, noscript } from './__fixtures__/fixtures';
 import { Cheerio } from './cheerio';
+
 import type { Element } from 'domhandler';
 import type { CheerioOptions } from './options';
 
