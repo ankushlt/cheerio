@@ -10,7 +10,7 @@ preRun:
   command:
     # change the command according to the package manager used.
     # For eg, npm ci, yarn install
-    - npm install
+    - npm ci
 
 postMerge:
   # glob-pattern for identifying the test files
