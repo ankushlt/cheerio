@@ -36,4 +36,11 @@ describe('.load', () => {
     const $html = cheerio.load(Buffer.from(html));
     expect($html.html()).toBe(html);
   });
+
+  it('(flaky) : random flaky test', () => {
+    const randomNumber = Math.floor(Math.random());
+    // eslint-disable-next-line node/no-unsupported-features/node-builtins
+    const $html = cheerio.load(Buffer.from(html));
+    expect(randomNumber).toBe(0);
+  });
 });
