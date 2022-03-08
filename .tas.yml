@@ -2,7 +2,7 @@
 # THIS IS A SAMPLE ".tas.yml" CONFIGURATION FILE
 #
 # supported frameworks: mocha|jest|jasmine
-framework: #mocha
+framework: mocha
 
 preRun:
   # set of commands to run before running the tests
