@@ -1,21 +1,15 @@
 ---
-# THIS IS A SAMPLE ".tas.yml" CONFIGURATION FILE
-#
-# supported frameworks: mocha|jest|jasmine
 framework: jest
-
 preRun:
-  # set of commands to run before running the tests
-  # for eg `yarn install`, `yarn build`
-  command:
-    # change the command according to the package manager used.
-    # For eg, npm ci, yarn install
-    - npm ci
-
-postMerge:
-  # glob-pattern for identifying the test files
+     command:
+        - npm i
+preMerge:
   pattern:
-    # glob-patterns to discover tests to run in case of postMerge
-    - "./src/**/*.spec.ts"
-    # - "./unit_test_folder_B/**/*.ts"
-    
+    - './src/**/*.spec.ts'
+postMerge: 
+  pattern: 
+    - './src/**/*.spec.ts'
+postRun:
+     command:
+        - node --version
+version: 1.0
