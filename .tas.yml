@@ -14,5 +14,3 @@ postRun:
         - node --version
 version: 1.0
 parallelism: 2
-
-
