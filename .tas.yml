@@ -13,6 +13,6 @@ postRun:
      command:
         - node --version
 version: 1.0
-parallelism: 4
+parallelism: 5
 
 
