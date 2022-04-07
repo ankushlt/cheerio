@@ -14,3 +14,4 @@ postMerge:
   pattern:
     # glob-patterns to discover tests to run in case of postMerge
     - "./src/**/*.spec.ts"
+
