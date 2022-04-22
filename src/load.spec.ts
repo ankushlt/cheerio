@@ -39,7 +39,7 @@ describe('.load', () => {
 
   it('(flaky) : random flaky test', () => {
     const randomNumber = Math.floor(Math.random());
-    const $html = cheerio.load(Buffer.from(html));
+    // const $html = cheerio.load(Buffer.from(html));
     expect(randomNumber).toBe(1);
   });
 });
